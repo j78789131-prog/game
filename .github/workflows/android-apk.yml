@@ -1,0 +1,25 @@
+name: Build Android APK with Expo EAS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  android-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Configure Expo
+        working-directory: apps/android
+        run: |
+          npm install
+          npx eas-cli@latest build:configure --platform android
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Build APK
+        working-directory: apps/android
+        run: npx eas-cli@latest build --platform android --profile preview --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
