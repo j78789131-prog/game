@@ -11,15 +11,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Configure Expo
+      - name: Install Android app dependencies
         working-directory: apps/android
-        run: |
-          npm install
-          npx eas-cli@latest build:configure --platform android
+        run: npm install
+      - name: Initialize Expo EAS project
+        working-directory: apps/android
+        run: npx eas-cli@latest init --force --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-      - name: Build APK
+      - name: Build installable Android APK
         working-directory: apps/android
         run: npx eas-cli@latest build --platform android --profile preview --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EXPO_PUBLIC_GAME_URL: https://driving-game-4w88.onrender.com/game/
