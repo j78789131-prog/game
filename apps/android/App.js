@@ -1,9 +1,9 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { WebView } from 'react-native-webview';
 
-const GAME_URL = process.env.EXPO_PUBLIC_GAME_URL || 'http://10.0.2.2:3000/game/';
+const GAME_URL = process.env.EXPO_PUBLIC_GAME_URL || 'https://driving-game-4w88.onrender.com/game/';
 
 export default function App() {
   return (
