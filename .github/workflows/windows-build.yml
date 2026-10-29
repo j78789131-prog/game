@@ -25,7 +25,7 @@ jobs:
       - run: npm install
       - run: npm run dist
         env:
-          GAME_URL: https://YOUR-RENDER-SERVICE.onrender.com/game/
+          GAME_URL: https://driving-game-4w88.onrender.com/game/
       - uses: actions/upload-artifact@v4
         with:
           name: Paris-Drive-Windows-Installer
