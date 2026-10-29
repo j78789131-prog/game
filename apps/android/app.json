@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Paris Drive",
+    "slug": "paris-drive",
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "package": "com.parisdrive.game",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "extra": {
+      "eas": {
+        "projectId": "REPLACE_WITH_EXPO_EAS_PROJECT_ID"
+      }
+    }
+  }
+}
