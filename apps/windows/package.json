@@ -1,0 +1,22 @@
+{
+  "name": "paris-drive-windows",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paris Drive Windows desktop wrapper",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.parisdrive.game",
+    "productName": "Paris Drive",
+    "directories": { "output": "release" },
+    "win": { "target": ["nsis"] },
+    "nsis": { "oneClick": true, "allowToChangeInstallationDirectory": true }
+  }
+}
